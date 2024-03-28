@@ -25,10 +25,12 @@ public class Exercise_1 {
             System.out.println("Сложение: " + (a + b));
             System.out.println("Вычитание: " + (a - b));
             System.out.println("Умножение: " + (a * b));
-            if (b != 0) {
-                System.out.println("Деление: " + ((double) a / b));
-            } else {
-                System.out.println("Деление на ноль невозможно");
+
+            // Проверка деления на ноль
+            try {
+                System.out.println("Деление: " + (a / b));
+            } catch (ArithmeticException e) {
+                System.out.println("Ошибка: деление на ноль невозможно.");
             }
         } catch (InputMismatchException e) {
             System.out.println("Ошибка: введено не целое число.");
